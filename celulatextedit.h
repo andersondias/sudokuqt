@@ -5,9 +5,10 @@
 
 class CelulaTextEdit : QLineEdit
 {
-public:
+private:
     Celula * celula;
-
+public:
+    void setCelula(Celula *);
 };
 
 #endif // CELULATEXTEDIT_H

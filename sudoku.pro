@@ -16,7 +16,8 @@ SOURCES += main.cpp\
     tabuleiro.cpp \
     importador_por_arquivo.cpp \
     helpers.cpp \
-    grupo.cpp
+    grupo.cpp \
+    celulatextedit.cpp
 
 HEADERS  += mainwindow.h \
     celula.h \

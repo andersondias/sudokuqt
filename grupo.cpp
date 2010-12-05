@@ -5,14 +5,15 @@ using namespace std;
 
 Grupo::Grupo()
 {
+    this->celulas = new Celula[9];
 }
 
-void Grupo::set_celula(Celula * celula, int posicao)
+void Grupo::set_celula(Celula celula, int posicao)
 {
   celulas[posicao] = celula;
 }
 
-Celula * Grupo::get_celula(int posicao)
+Celula Grupo::get_celula(int posicao)
 {
   return celulas[posicao];
 }
@@ -28,7 +29,7 @@ bool Grupo::has_any_repeat()
 
   for (int i = 0; i < 9; i++) {
     //valor da celula atual, subtraido UM para usar como indice no vetor 'valores_existentes'
-    valor_da_celula_atual = celulas[i]->get_value() - 1;
+    valor_da_celula_atual = celulas[i].get_value() - 1;
 
     //se a posição já tiver sido setada, é porque é um valor repetido
     if (valores_existentes[valor_da_celula_atual]) {
@@ -51,7 +52,7 @@ bool Grupo::is_solved()
 
   //verifica se o grupo tem algum 0
   for(int i = 0; i < 9; i++) {
-    if (celulas[i]->get_value() == 0) {
+    if (celulas[i].get_value() == 0) {
       has_any_zero = true;
       break;
     }

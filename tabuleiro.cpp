@@ -16,9 +16,9 @@ Tabuleiro::Tabuleiro(Celula * celulas)
     int linha  = i / 9;
     int coluna = i % 9;
     int quadrado = (i / 27) * 3 + (coluna / 3);
-//    linhas[linha]->set_celula(celulas[i], coluna);
-//    colunas[coluna]->set_celula(celulas[i], linha);
-//    quadrados[quadrado]->set_celula(celulas[i], (linha % 3) * 3 + (coluna % 3));
+    linhas[linha]->set_celula(this->celulas[i], coluna);
+    colunas[coluna]->set_celula(this->celulas[i], linha);
+    quadrados[quadrado]->set_celula(this->celulas[i], (linha % 3) * 3 + (coluna % 3));
   }
 }
 
