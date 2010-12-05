@@ -4,9 +4,9 @@
 #include "celula.h"
 #include "importador_por_arquivo.h"
 
-static Celula * ImportadorPorArquivo::importar()
+Celula * ImportadorPorArquivo::importar()
 {
-  FILE* file = fopen("jogos", "r");
+  FILE* file = fopen("/home/anderson/workspace/sudoku/jogos", "r");
 
   //o arquivo de jogos tem 150 configurações iniciais disponíveis
   int line_number = random(150);
@@ -16,8 +16,7 @@ static Celula * ImportadorPorArquivo::importar()
     fgets(line, sizeof(line), file);
   }
 
-  Celula * celulas;
-  celulas = new Celula[81];
+  Celula * celulas[81];
 
   //cria as 81 celulas
   int valor_nova_celula;
@@ -36,5 +35,5 @@ static Celula * ImportadorPorArquivo::importar()
     celulas[i] = nova_celula;
   }
 
-  return celulas;
+  return * celulas;
 }
